@@ -5,6 +5,7 @@ import LoginPage from "./pages/LoginPage";
 import EmailVerificationPage from "./pages/EmailVerificationPage";
 import LoadingSpinner from "./components/LoadingSpinner";
 import { Toaster } from "react-hot-toast";
+import DashboardPage from "./pages/DashboardPage";
 
 import { useAuthStore } from "./store/authStore";
 import { useEffect } from "react";
@@ -69,14 +70,14 @@ const App = () => {
       />
 
       <Routes>
-        {/* <Route
+        <Route
           path="/"
           element={
             <ProtectedRoute>
               <DashboardPage />
             </ProtectedRoute>
           }
-        /> */}
+        />
         <Route
           path="/signup"
           element={
