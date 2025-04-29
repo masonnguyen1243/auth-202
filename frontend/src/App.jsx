@@ -6,6 +6,7 @@ import EmailVerificationPage from "./pages/EmailVerificationPage";
 import LoadingSpinner from "./components/LoadingSpinner";
 import { Toaster } from "react-hot-toast";
 import DashboardPage from "./pages/DashboardPage";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 
 import { useAuthStore } from "./store/authStore";
 import { useEffect } from "react";
@@ -95,14 +96,14 @@ const App = () => {
           }
         />
         <Route path="/verify-email" element={<EmailVerificationPage />} />
-        {/* <Route
+        <Route
           path="/forgot-password"
           element={
             <RedirectAuthenticatedUser>
               <ForgotPasswordPage />
             </RedirectAuthenticatedUser>
           }
-        /> */}
+        />
 
         {/* <Route
           path="/reset-password/:token"
