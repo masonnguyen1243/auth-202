@@ -206,3 +206,18 @@ export const resetPassword = async (req, res) => {
     return res.status(500).json({ message: error.message, success: false });
   }
 };
+
+export const checkAuth = async (req, res) => {
+  try {
+    const user = await User.findById(req.userId);
+    if (!user) {
+      return res
+        .status(400)
+        .json({ success: false, message: "User not found" });
+    }
+
+    return res.status(200).json({ success: true, user });
+  } catch (error) {
+    return res.status(500).json({ message: error.message, success: false });
+  }
+};
