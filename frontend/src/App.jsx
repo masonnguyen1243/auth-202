@@ -10,6 +10,7 @@ import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 
 import { useAuthStore } from "./store/authStore";
 import { useEffect } from "react";
+import ResetPasswordPage from "./pages/ResetPasswordPage";
 
 // protect routes that require authentication
 const ProtectedRoute = ({ children }) => {
@@ -105,14 +106,14 @@ const App = () => {
           }
         />
 
-        {/* <Route
+        <Route
           path="/reset-password/:token"
           element={
             <RedirectAuthenticatedUser>
               <ResetPasswordPage />
             </RedirectAuthenticatedUser>
           }
-        /> */}
+        />
         {/* catch all routes */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
